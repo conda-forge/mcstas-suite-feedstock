@@ -25,10 +25,10 @@ outputs:
         - cmake
         - make  # [not win]
         - {{ compiler('c') }}
-      host:
         - flex  # [not win]
         - bison  # [not win]
         - winflexbison  # [win]
+      host:
         - dirent  # [win]
       run:
         - python

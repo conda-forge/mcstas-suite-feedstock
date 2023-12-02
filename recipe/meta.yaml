@@ -1,5 +1,5 @@
-{% set version = "3.4.7" %}
-{% set sha_value = "e6114c0daa24b77dd69c84846da1505ed8c96b0bc46a91049450ccec21322266" %}
+{% set version = "3.4.8" %}
+{% set sha_value = "6402617c3e369a25181e1869bcf7486f861341a2531c43c4b7476fdef6b2f5d5" %}
 #NB get sha256 with: curl -sL <URL> | openssl sha256
 
 package:
@@ -12,14 +12,14 @@ source:
   folder: src
 
 build:
-  number: 3
+  number: 0
 
 outputs:
 
   - name: mcstas-core
     script: install-files-core.sh
-    build:  # [win]
-      skip: True  # [win]
+    build:   # [win]
+      skip: true  # [win]
     requirements:
       build:
         - cmake
@@ -60,7 +60,7 @@ outputs:
 
   - name: mcstas-mcgui
     build:
-      skip: True  # [win]
+      skip: true  # [win]
     requirements:
       run:
         - mcstas-core
@@ -74,7 +74,7 @@ outputs:
 
   - name: mcstas-vis
     build:
-      skip: True  # [win]
+      skip: true  # [win]
     requirements:
       run:
         - mcstas-core
@@ -95,8 +95,8 @@ outputs:
         - python ${SRC_DIR}/test_pkg.py vis
 
   - name: mcstas
-    build:  # [win]
-      skip: True  # [win]
+    build:   # [win]
+      skip: true  # [win]
     test:
       files:
         - test_pkg.py

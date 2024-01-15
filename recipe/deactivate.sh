@@ -1,0 +1,2 @@
+export MCSTAS=""
+unset MCSTAS

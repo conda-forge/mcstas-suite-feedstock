@@ -63,3 +63,11 @@ fi
 if [ -f "${PREFIX}/bin/acc_gpu_bind" ]; then
     mv "${PREFIX}/bin/acc_gpu_bind" "${PREFIX}/bin/mcstas-acc_gpu_bind"
 fi
+
+# Activation script (simply to get $MCSTAS convenience env var to work in the
+# same way as when McStas is installed in other manners.
+for CHANGE in "activate" "deactivate"
+do
+    mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
+    cp "${RECIPE_DIR}/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
+done

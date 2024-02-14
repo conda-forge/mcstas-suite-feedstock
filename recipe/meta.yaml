@@ -18,7 +18,7 @@ outputs:
 
   - name: mcstas-core
     script: install-files-core.sh  # [not win]
-    script: install-files-core.bat # [win]
+    script: install-files-core.bat  # [win]
     build:  # [win]
       skip: false  # [win]
     requirements:
@@ -34,7 +34,7 @@ outputs:
       run:
         - python
         - {{ compiler('c') }}
-        - bash # [unix]
+        - bash  # [unix]
         - pyaml # for mcrun
         - ply # for traces from mcrun
       entry_points:
@@ -52,7 +52,7 @@ outputs:
     build:
       noarch: generic
     script: install-files-data.sh  # [not win]
-    script: install-files-data.bat # [win]
+    script: install-files-data.bat  # [win]
     test:
       files:
         - test_pkg.py
@@ -102,7 +102,7 @@ outputs:
         - python ${SRC_DIR}/test_pkg.py vis
 
   - name: mcstas
-    build:   # [win]
+    build:  # [win]
       skip: false  # [win]
     test:
       files:

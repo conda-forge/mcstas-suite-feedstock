@@ -87,7 +87,7 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
         'bin/mcrun',
         'bin/mcgui',
         'share/mcstas/tools/Python/mccodelib/__init__.py',
-        'share/mcstas/resources/examples/BNL_H8.instr',
+        'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr',
     ] )
     ensure_basic_commands_run( [
         'mcstas --help',
@@ -99,7 +99,7 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
 
 
     instrprefix = 'src/mcstas-comps' if take_instr_file_from_src else 'share/mcstas/resources'
-    run_instrument_file( f'{instrprefix}/examples/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5')
+    run_instrument_file( f'{instrprefix}/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5')
     #FIXME: Fails runtime, enable once we find a cure: run_instrument_file( f'{instrprefix}/examples/Union_manual_example.instr', '-s1000 -n1e5')
 
 _sample_data_files = ['share/mcstas/resources/data/Be.laz']
@@ -163,7 +163,7 @@ def tests_for_pkg_mcstas():
         return
 
     #MPI test (disabled for now):
-    #run_instrument_file( 'share/mcstas/resources/examples/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2')
+    #run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2')
 
     #MCPL test:
     run_instrument_file( 'share/mcstas/resources/examples/Test_MCPL_input.instr', '-s1000 repeat=1')

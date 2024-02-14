@@ -166,7 +166,7 @@ def tests_for_pkg_mcstas():
     #run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2')
 
     #MCPL test:
-    run_instrument_file( 'share/mcstas/resources/examples/Tests_MCPL_etc/Test_MCPL_input/Test_MCPL_input.instr', '-s1000 repeat=1')
+    run_instrument_file( 'share/mcstas/resources/examples/Tests_MCPL_etc/Test_MCPL_input/Test_MCPL_input.instr', '-s1000 repeat=1 MCPLFILE=share/mcstas/resources/examples/Tests_MCPL_etc/Test_MCPL_input/voutput.mcpl')
     run_instrument_file( 'share/mcstas/resources/examples/Tests_MCPL_etc/Test_MCPL_input/Test_MCPL_output.instr', '-s1000 Ncount=1e3')
 
     #NCrystal test with NCrystal-shipped data:

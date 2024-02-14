@@ -1,5 +1,5 @@
 {% set version = "3.4.8" %}
-{% set sha_value = "6402617c3e369a25181e1869bcf7486f861341a2531c43c4b7476fdef6b2f5d5" %}
+#{% set sha_value = "6402617c3e369a25181e1869bcf7486f861341a2531c43c4b7476fdef6b2f5d5" %}
 #NB get sha256 with: curl -sL <URL> | openssl sha256
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/McStasMcXtrace/McCode/archive/mcstas-{{ version }}.tar.gz
-  sha256: {{ sha_value }}
+  url: https://github.com/willend/McCode/archive/mcstas-{{ version }}.tar.gz
+  #sha256: {{ sha_value }}
   folder: src
 
 build:

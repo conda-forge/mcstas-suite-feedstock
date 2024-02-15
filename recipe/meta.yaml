@@ -73,7 +73,7 @@ outputs:
       files:
         - test_pkg.py
       commands:
-        - python ${SRC_DIR}/test_pkg.py mcgui
+        - python ${SRC_DIR}/test_pkg.py mcgui  # [not win]
       entry_points:
         - mcplot = tools.Python.mcplot.pyqtgraph:main_mcplot
         - mcdisplay = tools.Python.mcdisplay.pyqtgraph:main_mcdisplay

@@ -23,7 +23,7 @@ work_dir = AbsPath('.')
 def work_in_tmpdir():
     the_cwd = os.getcwd()
     try:
-        with tempfile.TemporaryDirectory() as tmpdir:
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmpdir:
             os.chdir(tmpdir)
             yield
     finally:

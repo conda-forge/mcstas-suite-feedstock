@@ -167,7 +167,7 @@ def tests_for_pkg_mcstas():
 
     #MCPL test:
     #run_instrument_file( 'share/mcstas/resources/examples/Tests_MCPL_etc/Test_MCPL_input/Test_MCPL_input.instr', '-s1000 repeat=1')
-    run_instrument_file( 'share/mcstas/resources/examples/Tests_MCPL_etc/Test_MCPL_input/Test_MCPL_output.instr', '-s1000 Ncount=1e3')
+    run_instrument_file( 'share/mcstas/resources/examples/Tests_MCPL_etc/Test_MCPL_output/Test_MCPL_output.instr', '-s1000 Ncount=1e3')
 
     #NCrystal test with NCrystal-shipped data:
     run_instrument_file( 'share/mcstas/resources/examples/NCrystal/NCrystal_example/NCrystal_example.instr','sample_cfg=Al_sg225.ncmat -s1000 -n1e5' )

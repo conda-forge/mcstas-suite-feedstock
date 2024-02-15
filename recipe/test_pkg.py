@@ -42,7 +42,10 @@ def launch( cmd, **kwargs ):
     return res
 
 def query_mcrun_showcfgdir( cfgdirname='resourcedir', must_exist = True ):
-    cmd = f'mcrun --showcfg {cfgdirname}'
+    if platform.system().lower()=='windows':
+        cmd = f'mcrun.bat --showcfg {cfgdirname}'
+    else:
+        cmd = f'mcrun --showcfg {cfgdirname}'
     res = launch(cmd, capture_output = True, text = True )
     p = pathlib.Path(res.stdout.strip())
     if must_exist and not p.is_dir():

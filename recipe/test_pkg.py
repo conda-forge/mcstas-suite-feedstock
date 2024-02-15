@@ -82,10 +82,19 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
     assert mcrun_resourcedir == conda_prefix_dir / 'share' / 'mcstas' / 'resources'
     assert mcrun_bindir == conda_prefix_dir / 'bin'
 
+    if not os.name == 'nt':
+        mcrun = 'mcrun'
+        mcstas = 'mcstas'
+        mcgui = 'mcgui'
+    else:
+        mcrun = 'mcrun.bat'
+        mcstas = 'mcstas.exe'
+        mcgui = 'mcgui.bat'
+
     ensure_files_are_installed( [
-        'bin/mcstas',
-        'bin/mcrun',
-        'bin/mcgui',
+        mcstas,
+        mcrun,
+        mcgui,
         'share/mcstas/tools/Python/mccodelib/__init__.py',
         'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr',
     ] )

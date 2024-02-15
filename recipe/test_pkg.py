@@ -73,7 +73,10 @@ def run_instrument_file( instrumentfile, parameters = '' ):
         shutil.copy(f,str(AbsPath('.')))
         launch( f'mcstas {f.name}' )
         pars = '' if not parameters else ' %s'%parameters
-        launch( f'mcrun -c {f.name}{pars}' )
+        if platform.system().lower()=='windows':
+            launch( f'mcrun.bat -c {f.name}{pars}' )
+        else:
+            launch( f'mcrun -c {f.name}{pars}' )
 
 def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
     mcrun_resourcedir = query_mcrun_showcfgdir( 'resourcedir', must_exist = True )
@@ -90,6 +93,14 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
             'share/mcstas/tools/Python/mccodelib/__init__.py',
             'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr',
         ] )
+
+        ensure_basic_commands_run( [
+            'mcstas.exe --help',
+            'mcstas.exe --version',
+            'mcrun.bat --showcfg bindir',
+            'mcrun.bat --showcfg resourcedir',
+            'mcrun.bat --showcfg libdir',
+        ] )
     else:
         ensure_files_are_installed( [
             'bin/mcstas',
@@ -99,13 +110,13 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
             'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr',
         ] )
 
-    ensure_basic_commands_run( [
-        'mcstas --help',
-        'mcstas --version',
-        'mcrun --showcfg bindir',
-        'mcrun --showcfg resourcedir',
-        'mcrun --showcfg libdir',
-    ] )
+        ensure_basic_commands_run( [
+            'mcstas --help',
+            'mcstas --version',
+            'mcrun --showcfg bindir',
+            'mcrun --showcfg resourcedir',
+            'mcrun --showcfg libdir',
+        ] )
 
 
     instrprefix = 'src/mcstas-comps' if take_instr_file_from_src else 'share/mcstas/resources'

@@ -84,17 +84,17 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
 
     if platform.system().lower()=='windows':
         ensure_files_are_installed( [
-            'mcstas.exe',
-            'mcrun.bat',
-            'mcgui.bat',
+            'bin/mcstas.exe',
+            'bin/mcrun.bat',
+            'bin/mcgui.bat',
             'share/mcstas/tools/Python/mccodelib/__init__.py',
             'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr',
         ] )
     else:
         ensure_files_are_installed( [
-            'mcstas',
-            'mcrun',
-            'mcgui',
+            'bin/mcstas',
+            'bin/mcrun',
+            'bin/mcgui',
             'share/mcstas/tools/Python/mccodelib/__init__.py',
             'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr',
         ] )

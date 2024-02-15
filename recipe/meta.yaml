@@ -60,7 +60,7 @@ outputs:
       requires:
         - python
       commands:
-        - python test_pkg.py data
+        - python test_pkg.py data  # [not win]
 
   - name: mcstas-mcgui
     build:

@@ -29,6 +29,7 @@ outputs:
         - flex  # [not win]
         - bison  # [not win]
         - winflexbison  # [win]
+        - m2w64-gcc  # [win]
       host:
         - dirent  # [win]
       run:

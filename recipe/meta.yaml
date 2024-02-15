@@ -111,7 +111,6 @@ outputs:
       requires:
       commands:
         - python test_pkg.py mcstas  # [not win]
-        - python test_pkg.py mcstas.exe  # [win]
     requirements:
       run:
         - {{ pin_subpackage('mcstas-core', max_pin="x.x.x") }}

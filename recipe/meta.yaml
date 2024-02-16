@@ -38,6 +38,7 @@ outputs:
         - bash  # [unix]
         - pyaml # for mcrun
         - ply # for traces from mcrun
+        - m2w64-gcc  # [win]
       entry_points:
         - mcrun = tools.Python.mcrun:main_mcrun
     test:

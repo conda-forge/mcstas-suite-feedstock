@@ -61,6 +61,7 @@ outputs:
         - python
       commands:
         - python test_pkg.py data  # [not win]
+        - python %SRC_DIR%/test_pkg.py data  # [win]
 
   - name: mcstas-mcgui
     build:
@@ -113,6 +114,7 @@ outputs:
       requires:
       commands:
         - python test_pkg.py mcstas  # [not win]
+        - python %SRC_DIR%/test_pkg.py mcstas  # [win]
     requirements:
       run:
         - {{ pin_subpackage('mcstas-core', max_pin="x.x.x") }}

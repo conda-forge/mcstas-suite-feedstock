@@ -1,5 +1,5 @@
-{% set version = "3.4.21" %}
-{% set sha_value = "9ed2bf2147193a3e94a7a00cdf9d25cb866639e544e0b5835bb51a8fa142a180" %}
+{% set version = "3.4.22" %}
+{% set sha_value = "f4ab9d33fbcb3e04023fd8cc5d409b8d4888efe8d85039d870cc2e4c1df67cdb" %}
 #NB get sha256 with: curl -sL <URL> | openssl sha256
 
 package:
@@ -30,6 +30,7 @@ outputs:
         - bison  # [not win]
         - winflexbison  # [win]
         - m2w64-gcc  # [win]
+        - mslex  # [win]
       host:
         - dirent  # [win]
       run:
@@ -39,6 +40,7 @@ outputs:
         - pyaml # for mcrun
         - ply # for traces from mcrun
         - m2w64-gcc  # [win]
+        - mslex  # [win]
       entry_points:
         - mcrun = tools.Python.mcrun:main_mcrun
     test:

@@ -38,8 +38,9 @@ cmake ^
     -DENSURE_NCRYSTAL=OFF ^
     -DENABLE_CIF2HKL=OFF ^
     -DENABLE_NEUTRONICS=OFF ^
-    -DBUILD_SHARED_LIBS=ON ^
-	-DCMAKE_C_COMPILER=gcc.exe
+    -DBUILD_SHARED_LIBS=ON
+
+@REM ^	DCMAKE_C_COMPILER=gcc.exe
 
 	
 cmake --build . --config Release

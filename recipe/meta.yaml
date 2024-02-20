@@ -19,8 +19,6 @@ outputs:
   - name: mcstas-core
     script: install-files-core.sh  # [not win]
     script: install-files-core.bat  # [win]
-    build:  # [win]
-      skip: false  # [win]
     requirements:
       build:
         - cmake
@@ -39,8 +37,6 @@ outputs:
         - pyaml # for mcrun
         - ply # for traces from mcrun
         - mslex  # [win]
-      entry_points:
-        - mcrun = tools.Python.mcrun:main_mcrun
     test:
       files:
         - test_pkg.py
@@ -61,12 +57,9 @@ outputs:
       requires:
         - python
       commands:
-        - python test_pkg.py data  # [not win]
-        - python %SRC_DIR%/test_pkg.py data  # [win]
+        - python test_pkg.py data
 
   - name: mcstas-mcgui
-    build:
-      skip: false  # [win]
     requirements:
       run:
         - mcstas-core
@@ -76,16 +69,9 @@ outputs:
       files:
         - test_pkg.py
       commands:
-        - python ${SRC_DIR}/test_pkg.py mcgui  # [not win]
-        - python %SRC_DIR%/test_pkg.py mcgui  # [win]
-      entry_points:
-        - mcplot = tools.Python.mcplot.pyqtgraph:main_mcplot
-        - mcdisplay = tools.Python.mcdisplay.pyqtgraph:main_mcdisplay
-        - mcgui = tools.Python.mcgui:main_mcgui
+        - python test_pkg.py mcgui
 
   - name: mcstas-vis
-    build:
-      skip: false  # [win]
     requirements:
       run:
         - mcstas-core
@@ -103,19 +89,15 @@ outputs:
       files:
         - test_pkg.py
       commands:
-        - python ${SRC_DIR}/test_pkg.py vis  # [not win]
-        - python %SRC_DIR%/test_pkg.py vis  # [win]
+        - python test_pkg.py vis
 
   - name: mcstas
-    build:  # [win]
-      skip: false  # [win]
     test:
       files:
         - test_pkg.py
       requires:
       commands:
-        - python test_pkg.py mcstas  # [not win]
-        - python %SRC_DIR%/test_pkg.py mcstas  # [win]
+        - python test_pkg.py mcstas
     requirements:
       run:
         - {{ pin_subpackage('mcstas-core', max_pin="x.x.x") }}

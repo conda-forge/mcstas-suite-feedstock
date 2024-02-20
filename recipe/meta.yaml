@@ -19,7 +19,8 @@ outputs:
   - name: mcstas-core
     script: install-files-core.sh  # [not win]
     script: install-files-core.bat  # [win]
-    build:
+    build:  # [win]
+      skip: false  # [win]
     requirements:
       build:
         - cmake
@@ -65,6 +66,7 @@ outputs:
 
   - name: mcstas-mcgui
     build:
+      skip: false  # [win]
     requirements:
       run:
         - mcstas-core
@@ -83,6 +85,7 @@ outputs:
 
   - name: mcstas-vis
     build:
+      skip: false  # [win]
     requirements:
       run:
         - mcstas-core
@@ -104,7 +107,8 @@ outputs:
         - python %SRC_DIR%/test_pkg.py vis  # [win]
 
   - name: mcstas
-    build:
+    build:  # [win]
+      skip: false  # [win]
     test:
       files:
         - test_pkg.py

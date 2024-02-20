@@ -22,14 +22,11 @@ work_dir = AbsPath('.')
 @contextlib.contextmanager
 def work_in_tmpdir():
     the_cwd = os.getcwd()
-    if platform.system().lower()=='windows':
-        ignore_cleanup=True # Handle occasional issues cleaning up on windows 
-    else:
-        ignore_cleanup=False
     try:
-        with tempfile.TemporaryDirectory(ignore_cleanup_errors=ignore_cleanup) as tmpdir:
+        with tempfile.TemporaryDirectory() as tmpdir:
             os.chdir(tmpdir)
             yield
+            os.chdir(the_cwd)
     finally:
         os.chdir(the_cwd)
 

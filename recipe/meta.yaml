@@ -1,5 +1,5 @@
-{% set version = "3.4.8" %}
-{% set sha_value = "6402617c3e369a25181e1869bcf7486f861341a2531c43c4b7476fdef6b2f5d5" %}
+{% set version = "3.4.9" %}
+{% set sha_value = "b13e5c0ee5ff2945920c6b401d57121962cec92dcb6ac9bc70d6d499d8f6c256" %}
 #NB get sha256 with: curl -sL <URL> | openssl sha256
 
 package:
@@ -12,14 +12,13 @@ source:
   folder: src
 
 build:
-  number: 1
+  number: 0
 
 outputs:
 
   - name: mcstas-core
-    script: install-files-core.sh
-    build:   # [win]
-      skip: true  # [win]
+    script: install-files-core.sh  # [not win]
+    script: install-files-core.bat  # [win]
     requirements:
       build:
         - cmake
@@ -28,22 +27,24 @@ outputs:
         - flex  # [not win]
         - bison  # [not win]
         - winflexbison  # [win]
+        - mslex  # [win]
       host:
         - dirent  # [win]
       run:
         - python
         - {{ compiler('c') }}
-        - bash # for mcrun, and maybe others
+        - bash  # [unix]
         - pyaml # for mcrun
         - ply # for traces from mcrun
+        - mslex  # [win]
     test:
       files:
         - test_pkg.py
       commands:
         - python test_pkg.py core
       source_files:
-        - src/mcstas-comps/examples/BNL_H8.instr
-        - src/mcstas-comps/examples/Union_manual_example.instr
+        - src/mcstas-comps/examples/BNL/BNL_H8/BNL_H8.instr
+        - src/mcstas-comps/examples/Union_demos/Union_manual_example/Union_manual_example.instr
 
   - name: mcstas-data
     build:
@@ -59,8 +60,6 @@ outputs:
         - python test_pkg.py data
 
   - name: mcstas-mcgui
-    build:
-      skip: true  # [win]
     requirements:
       run:
         - mcstas-core
@@ -70,11 +69,9 @@ outputs:
       files:
         - test_pkg.py
       commands:
-        - python ${SRC_DIR}/test_pkg.py mcgui
+        - python test_pkg.py mcgui
 
   - name: mcstas-vis
-    build:
-      skip: true  # [win]
     requirements:
       run:
         - mcstas-core
@@ -92,11 +89,9 @@ outputs:
       files:
         - test_pkg.py
       commands:
-        - python ${SRC_DIR}/test_pkg.py vis
+        - python test_pkg.py vis
 
   - name: mcstas
-    build:   # [win]
-      skip: true  # [win]
     test:
       files:
         - test_pkg.py

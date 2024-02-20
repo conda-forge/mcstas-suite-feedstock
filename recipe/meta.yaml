@@ -1,5 +1,5 @@
-{% set version = "3.4.8" %}
-{% set sha_value = "6402617c3e369a25181e1869bcf7486f861341a2531c43c4b7476fdef6b2f5d5" %}
+{% set version = "3.4.9" %}
+{% set sha_value = "b13e5c0ee5ff2945920c6b401d57121962cec92dcb6ac9bc70d6d499d8f6c256" %}
 #NB get sha256 with: curl -sL <URL> | openssl sha256
 
 package:
@@ -7,19 +7,19 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/McStasMcXtrace/McCode/archive/mcstas-{{ version }}.tar.gz
+  url: https://github.com/willend/McCode/archive/mcstas-{{ version }}.tar.gz
   sha256: {{ sha_value }}
   folder: src
 
 build:
-  number: 1
+  number: 0
 
 outputs:
 
   - name: mcstas-core
-    script: install-files-core.sh
-    build:   # [win]
-      skip: true  # [win]
+    script: install-files-core.sh  # [not win]
+    script: install-files-core.bat  # [win]
+    build:
     requirements:
       build:
         - cmake
@@ -28,22 +28,26 @@ outputs:
         - flex  # [not win]
         - bison  # [not win]
         - winflexbison  # [win]
+        - mslex  # [win]
       host:
         - dirent  # [win]
       run:
         - python
         - {{ compiler('c') }}
-        - bash # for mcrun, and maybe others
+        - bash  # [unix]
         - pyaml # for mcrun
         - ply # for traces from mcrun
+        - mslex  # [win]
+      entry_points:
+        - mcrun = tools.Python.mcrun:main_mcrun
     test:
       files:
         - test_pkg.py
       commands:
         - python test_pkg.py core
       source_files:
-        - src/mcstas-comps/examples/BNL_H8.instr
-        - src/mcstas-comps/examples/Union_manual_example.instr
+        - src/mcstas-comps/examples/BNL/BNL_H8/BNL_H8.instr
+        - src/mcstas-comps/examples/Union_demos/Union_manual_example/Union_manual_example.instr
 
   - name: mcstas-data
     build:
@@ -56,11 +60,11 @@ outputs:
       requires:
         - python
       commands:
-        - python test_pkg.py data
+        - python test_pkg.py data  # [not win]
+        - python %SRC_DIR%/test_pkg.py data  # [win]
 
   - name: mcstas-mcgui
     build:
-      skip: true  # [win]
     requirements:
       run:
         - mcstas-core
@@ -70,11 +74,15 @@ outputs:
       files:
         - test_pkg.py
       commands:
-        - python ${SRC_DIR}/test_pkg.py mcgui
+        - python ${SRC_DIR}/test_pkg.py mcgui  # [not win]
+        - python %SRC_DIR%/test_pkg.py mcgui  # [win]
+      entry_points:
+        - mcplot = tools.Python.mcplot.pyqtgraph:main_mcplot
+        - mcdisplay = tools.Python.mcdisplay.pyqtgraph:main_mcdisplay
+        - mcgui = tools.Python.mcgui:main_mcgui
 
   - name: mcstas-vis
     build:
-      skip: true  # [win]
     requirements:
       run:
         - mcstas-core
@@ -92,17 +100,18 @@ outputs:
       files:
         - test_pkg.py
       commands:
-        - python ${SRC_DIR}/test_pkg.py vis
+        - python ${SRC_DIR}/test_pkg.py vis  # [not win]
+        - python %SRC_DIR%/test_pkg.py vis  # [win]
 
   - name: mcstas
-    build:   # [win]
-      skip: true  # [win]
+    build:
     test:
       files:
         - test_pkg.py
       requires:
       commands:
-        - python test_pkg.py mcstas
+        - python test_pkg.py mcstas  # [not win]
+        - python %SRC_DIR%/test_pkg.py mcstas  # [win]
     requirements:
       run:
         - {{ pin_subpackage('mcstas-core', max_pin="x.x.x") }}

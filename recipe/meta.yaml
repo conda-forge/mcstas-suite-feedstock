@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/willend/McCode/archive/mcstas-{{ version }}.tar.gz
+  url: https://github.com/McStasMcXtrace/McCode/archive/mcstas-{{ version }}.tar.gz
   sha256: {{ sha_value }}
   folder: src
 

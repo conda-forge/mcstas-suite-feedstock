@@ -40,8 +40,8 @@ cmake ^
     -DENABLE_NEUTRONICS=OFF ^
     -DBUILD_SHARED_LIBS=ON ^
     -DMPILIB=msmpi.lib ^
-    -DMPILIBDIR="\${CONDA_PREFIX\}\\Library\\lib" ^
-    -DMPIINCLUDEDIR="\${CONDA_PREFIX\}\\Library\\include" ^
+    -DMPILIBDIR=-DMPILIBDIR=%CONDA_PREFIX%\Library\lib ^
+    -DMPIINCLUDEDIR=%CONDA_PREFIX%\Library\include ^
 
 @REM ^	DCMAKE_C_COMPILER=gcc.exe
 

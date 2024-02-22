@@ -28,6 +28,8 @@ outputs:
         - bison  # [not win]
         - winflexbison  # [win]
         - mslex  # [win]
+        - msmpi  # [win]
+        - openmpi  # [not win]
       host:
         - dirent  # [win]
       run:
@@ -37,6 +39,8 @@ outputs:
         - pyaml # for mcrun
         - ply # for traces from mcrun
         - mslex  # [win]
+        - msmpi  # [win]
+        - openmpi  # [not win]
     test:
       files:
         - test_pkg.py

@@ -1,5 +1,5 @@
-{% set version = "3.4.16" %}
-{% set sha_value = "84e4d48a4e141c90e5e8ab0c7486f2051804f9b54bfd8bc42c7ba66524c41a58" %}
+{% set version = "3.4.17" %}
+{% set sha_value = "164568ad29708b9291b6bba6969faf253957e80e7442070e1d56ee2f6f1d4dd0" %}
 #NB get sha256 with: curl -sL <URL> | openssl sha256
 
 package:
@@ -28,6 +28,8 @@ outputs:
         - bison  # [not win]
         - winflexbison  # [win]
         - mslex  # [win]
+        - msmpi  # [win]
+        - openmpi  # [not win]
       host:
         - dirent  # [win]
       run:
@@ -37,6 +39,8 @@ outputs:
         - pyaml # for mcrun
         - ply # for traces from mcrun
         - mslex  # [win]
+        - msmpi  # [win]
+        - openmpi  # [not win]
     test:
       files:
         - test_pkg.py

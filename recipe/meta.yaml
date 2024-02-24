@@ -1,5 +1,5 @@
-{% set version = "3.4.21" %}
-{% set sha_value = "e66a8ab143a639ab60802cc2d51fb0167fc11eba446c676f861764b58ec69670" %}
+{% set version = "3.4.22" %}
+{% set sha_value = "df9ed0f9d2402795468c4404a4460548cd3c04737863e2f0f6526933a159af28" %}
 #NB get sha256 with: curl -sL <URL> | openssl sha256
 
 package:

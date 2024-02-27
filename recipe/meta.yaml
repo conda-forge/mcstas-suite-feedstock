@@ -1,6 +1,4 @@
 {% set version = "3.4.23" %}
-{% set sha_value = "5bc62242c2c555be6bc9cc7be8b475e97fee38f58c8567e8c6a4bf8f8d7ee941" %}
-#NB get sha256 with: curl -sL <URL> | openssl sha256
 
 package:
   name: mcstas-suite
@@ -8,24 +6,24 @@ package:
 
 source:
   url: https://github.com/McStasMcXtrace/McCode/archive/mcstas-{{ version }}.tar.gz
-  sha256: {{ sha_value }}
+  sha256: 5bc62242c2c555be6bc9cc7be8b475e97fee38f58c8567e8c6a4bf8f8d7ee941
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
   - name: mcstas-core
-    script: install-files-core.sh  # [not win]
+    script: install-files-core.sh  # [unix]
     script: install-files-core.bat  # [win]
     requirements:
       build:
         - cmake
-        - make  # [not win]
+        - make  # [unix]
         - {{ compiler('c') }}
-        - flex  # [not win]
-        - bison  # [not win]
+        - flex  # [unix]
+        - bison  # [unix]
         - winflexbison  # [win]
         - mslex  # [win]
         - msmpi  # [win]
@@ -36,8 +34,10 @@ outputs:
         - python
         - {{ compiler('c') }}
         - bash  # [unix]
-        - pyaml # for mcrun
-        - ply # for traces from mcrun
+        # for mcrun
+        - pyaml
+        # for traces from mcrun
+        - ply
         - mslex  # [win]
         - msmpi  # [win]
         - openmpi  # [not win]
@@ -53,7 +53,7 @@ outputs:
   - name: mcstas-data
     build:
       noarch: generic
-    script: install-files-data.sh  # [not win]
+    script: install-files-data.sh  # [unix]
     script: install-files-data.bat  # [win]
     test:
       files:

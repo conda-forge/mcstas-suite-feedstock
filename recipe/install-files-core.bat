@@ -59,14 +59,6 @@ cmake --build . --target install --config Release
 @REM Data files will be provided in mcstas-data package instead:
 rd /s /q %PREFIX%\share\mcstas\resources\data
 
-@REM #Temporary workarounds:
-@REM if [ -f "${PREFIX}/bin/postinst" ]; then
-@REM     rm -f "${PREFIX}/bin/postinst"
-@REM fi
-@REM if [ -f "${PREFIX}/bin/acc_gpu_bind" ]; then
-@REM     mv "${PREFIX}/bin/acc_gpu_bind" "${PREFIX}/bin/mcstas-acc_gpu_bind"
-@REM fi
-
 @REM  Activation script (simply to get $MCSTAS convenience env var to work in the
 @REM  same way as when McStas is installed in other manners.
 @REM for CHANGE in "activate" "deactivate"

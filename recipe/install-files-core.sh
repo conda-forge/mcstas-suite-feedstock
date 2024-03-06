@@ -60,9 +60,6 @@ rm -rf "${PREFIX}/share/mcstas/resources/data"
 if [ -f "${PREFIX}/bin/postinst" ]; then
     rm -f "${PREFIX}/bin/postinst"
 fi
-if [ -f "${PREFIX}/bin/acc_gpu_bind" ]; then
-    mv "${PREFIX}/bin/acc_gpu_bind" "${PREFIX}/bin/mcstas-acc_gpu_bind"
-fi
 
 # Activation script (simply to get $MCSTAS convenience env var to work in the
 # same way as when McStas is installed in other manners.

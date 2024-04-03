@@ -42,6 +42,8 @@ cmake \
     -DENABLE_CIF2HKL=OFF \
     -DENABLE_NEUTRONICS=OFF \
     -DBUILD_SHARED_LIBS=ON \
+    -DNEXUSLIB=${CONDA_PREFIX}/lib \
+    -DNEXUSINCLUDE=${CONDA_PREFIX}/include/nexus \
     ${CMAKE_ARGS}
 
 cmake --build . --config Release

@@ -41,9 +41,7 @@ cmake ^
     -DBUILD_SHARED_LIBS=ON ^
     -DMPILIB=msmpi.lib ^
     -DMPILIBDIR=${CONDA_PREFIX}\\Library\\lib ^
-    -DMPIINCLUDEDIR=${CONDA_PREFIX}\\Library\\include ^
-    -DNEXUSLIB=${CONDA_PREFIX}\\Library\\lib ^
-    -DNEXUSINCLUDE=${CONDA_PREFIX}\\Library\\include\\nexus
+    -DMPIINCLUDEDIR=${CONDA_PREFIX}\\Library\\include
 
 @REM ^	DCMAKE_C_COMPILER=gcc.exe
 

@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 2
+  number: 3
 
 outputs:
 
@@ -43,7 +43,7 @@ outputs:
         - mslex  # [win]
         - msmpi  # [win]
         - openmpi  # [not win]
-        - nexus
+        - nexus  # [not (aarch64 or ppc64le)]
     test:
       files:
         - test_pkg.py

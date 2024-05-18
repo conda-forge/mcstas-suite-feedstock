@@ -39,8 +39,7 @@ cmake ^
     -DENABLE_CIF2HKL=OFF ^
     -DENABLE_NEUTRONICS=OFF ^
     -DBUILD_SHARED_LIBS=ON ^
-    -DMPILIB=${CONDA_PREFIX}\\Library\\lib\\msmpi.lib ^
-    -DMPIINCLUDEDIR=${CONDA_PREFIX}\\Library\\include
+    -DMPILIB=msmpi.lib
 
 @REM ^	DCMAKE_C_COMPILER=gcc.exe
 

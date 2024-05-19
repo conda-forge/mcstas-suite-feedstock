@@ -1,4 +1,4 @@
-{% set version = "3.4.39" %}
+{% set version = "3.4.41" %}
 
 package:
   name: mcstas-suite
@@ -8,7 +8,7 @@ package:
 # curl -sL url | openssl sha256
 source:
   url: https://github.com/McStasMcXtrace/McCode/archive/mcstas-{{ version }}.tar.gz
-  sha256: 03ab1998bb68611e07b7897a0f110b0975d343876af766d969b6ff672e1756ad
+  sha256: c04e992a41a4a5c1850d9908256eeef3afa1515db7c19e2266a4bf992888e82c
   folder: src
 
 build:
@@ -36,6 +36,7 @@ outputs:
         - python
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
+        - gsl
         - bash  # [unix]
         # for mcrun
         - pyaml
@@ -45,6 +46,7 @@ outputs:
         - msmpi  # [win]
         - openmpi  # [not win]
         - nexus  # [not (aarch64 or ppc64le)]
+        - nexpy  # [not (aarch64 or ppc64le)]
     test:
       files:
         - test_pkg.py

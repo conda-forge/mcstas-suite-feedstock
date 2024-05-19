@@ -182,12 +182,12 @@ def tests_for_pkg_mcstas():
     if not f_Be_laz.exists():
         raise SystemExit('Did not find Be.laz in expected location')
 
-    if platform.system().lower()=='windows':
-        print('Windows detected - skipping NCrystal/MCPL/mpi tests')
-        return
-
     #MPI test (disabled for now):
-    #run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2')
+    run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e6 --mpi=2')
+
+    if platform.system().lower()=='windows':
+        print('Windows detected - skipping NCrystal/MCPL tests')
+        return
 
     #MCPL test:
     run_instrument_file( 'share/mcstas/resources/examples/Tests_MCPL_etc/Test_MCPL_input/Test_MCPL_input.instr', '-s1000 repeat=1')

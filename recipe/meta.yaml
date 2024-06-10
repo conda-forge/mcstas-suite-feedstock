@@ -24,6 +24,7 @@ outputs:
         - cmake
         - make  # [unix]
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - flex  # [unix]
         - bison  # [unix]
         - winflexbison  # [win]

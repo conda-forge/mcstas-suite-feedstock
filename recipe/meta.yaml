@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -30,7 +30,8 @@ outputs:
         - winflexbison  # [win]
         - mslex  # [win]
         - msmpi  # [win]
-        - openmpi  # [not win]
+        - openmpi=4  # [osx]
+        - openmpi  # [not (win or osx)]
       host:
         - dirent  # [win]
       run:
@@ -45,7 +46,8 @@ outputs:
         - ply
         - mslex  # [win]
         - msmpi  # [win]
-        - openmpi  # [not win]
+        - openmpi=4  # [osx]
+        - openmpi  # [not (win or osx)]
         - nexus  # [not (aarch64 or ppc64le)]
         - nexpy  # [not (aarch64 or ppc64le)]
     test:

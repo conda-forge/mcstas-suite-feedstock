@@ -29,6 +29,7 @@ outputs:
         - bison  # [unix]
         - winflexbison  # [win]
         - mslex  # [win]
+        - nodejs
         - msmpi  # [win]
         - openmpi=4  # [osx]
         - openmpi  # [not (win or osx)]
@@ -46,6 +47,7 @@ outputs:
         - ply
         - mslex  # [win]
         - msmpi  # [win]
+        - nodejs
         - openmpi=4  # [osx]
         - openmpi  # [not (win or osx)]
         - nexus  # [not (aarch64 or ppc64le)]

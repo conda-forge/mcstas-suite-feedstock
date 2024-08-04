@@ -59,7 +59,7 @@ outputs:
         - python test_pkg.py core
       source_files:
         - src/mcstas-comps/examples/BNL/BNL_H8/BNL_H8.instr
-        - src/mcstas-comps/examples/Union_demos/Union_manual_example/Union_manual_example.instr
+        - src/mcstas-comps/examples/Union_demos/Manual_example/Manual_example.instr
 
   - name: mcstas-data
     build:

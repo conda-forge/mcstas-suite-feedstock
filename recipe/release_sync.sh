@@ -14,7 +14,7 @@ if [ "x$1" = "x" ]; then
 fi
 
 VERSION=$1
-URL="https://github.com/McStasMceXtrace/McCode/archive/v${VERSION}.tar.gz"
+URL="https://github.com/McStasMcXtrace/McCode/archive/v${VERSION}.tar.gz"
 SHA=`curl -sL ${URL} | openssl sha256`
 
 OLDVERSION=`grep set\ version\ =  meta.yaml | cut -f  2 -d\"`

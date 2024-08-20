@@ -39,19 +39,12 @@ outputs:
         - python
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
-        - gsl
         - bash  # [unix]
         # for mcrun
         - pyaml
         # for traces from mcrun
         - ply
         - mslex  # [win]
-        - msmpi  # [win]
-        - nodejs
-        - openmpi=4  # [osx]
-        - openmpi  # [not (win or osx)]
-        - nexus  # [not (aarch64 or ppc64le)]
-        - nexpy  # [not (aarch64 or ppc64le)]
     test:
       files:
         - test_pkg.py
@@ -100,6 +93,7 @@ outputs:
         - pillow
         - pyqtgraph
         - pyqt >=5.10
+        - nodejs
     test:
       files:
         - test_pkg.py
@@ -119,6 +113,12 @@ outputs:
         - {{ pin_subpackage('mcstas-data', max_pin="x.x.x") }}
         - {{ pin_subpackage('mcstas-mcgui', max_pin="x.x.x") }}
         - {{ pin_subpackage('mcstas-vis', max_pin="x.x.x") }}
+        - msmpi  # [win]
+        - openmpi=4  # [osx]
+        - openmpi  # [not (win or osx)]
+        - gsl
+        - nexus  # [not (aarch64 or ppc64le)]
+        - nexpy  # [not (aarch64 or ppc64le)]
         - ncrystal  # [unix and not (aarch64 or ppc64le)]
         - mcpl  # [unix and not (aarch64 or ppc64le)]
 

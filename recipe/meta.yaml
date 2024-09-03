@@ -31,8 +31,7 @@ outputs:
         - mslex  # [win]
         - nodejs
         - msmpi  # [win]
-        - openmpi=4  # [osx]
-        - openmpi  # [not (win or osx)]
+        - openmpi=4  # [unix]
       host:
         - dirent  # [win]
       run:

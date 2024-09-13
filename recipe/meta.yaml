@@ -115,10 +115,10 @@ outputs:
         - msmpi  # [win]
         - openmpi=4  # [unix]
         - gsl
-        - nexus  # [not (aarch64 or ppc64le)]
-        - nexpy  # [not (aarch64 or ppc64le)]
-        - ncrystal  # [unix and not (aarch64 or ppc64le)]
-        - mcpl  # [unix and not (aarch64 or ppc64le)]
+        - nexus
+        - nexpy
+        - ncrystal  # [unix]
+        - mcpl  # [unix]
 
 about:
   home: https://mcstas.org/

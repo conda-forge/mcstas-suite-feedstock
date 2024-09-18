@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -44,6 +44,8 @@ outputs:
         # for traces from mcrun
         - ply
         - mslex  # [win]
+        # for sync of 3D / js files
+        - rsync  # [unix]
     test:
       files:
         - test_pkg.py

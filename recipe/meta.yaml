@@ -46,6 +46,7 @@ outputs:
         - mslex  # [win]
         # for sync of 3D / js files
         - rsync  # [unix]
+        - mcstasscript
     test:
       files:
         - test_pkg.py

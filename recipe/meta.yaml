@@ -1,4 +1,4 @@
-{% set version = "3.5.1" %}
+{% set version = "3.5.2" %}
 
 package:
   name: mcstas-suite
@@ -8,11 +8,11 @@ package:
 # curl -sL url | openssl sha256
 source:
   url: https://github.com/McStasMcXtrace/McCode/archive/v{{ version }}.tar.gz
-  sha256: d6e867ea5fd6245114ebe43f877191d3c6121423c1a64faf40c60b1f10dc7617
+  sha256: 4b380ca11e9448794031bbfd49b47c688c288214fe4e629d32f01694c7080573
   folder: src
 
 build:
-  number: 1
+  number: 0
 
 outputs:
 
@@ -46,6 +46,7 @@ outputs:
         - mslex  # [win]
         # for sync of 3D / js files
         - rsync  # [unix]
+        - mcstasscript
     test:
       files:
         - test_pkg.py
@@ -117,7 +118,7 @@ outputs:
         - msmpi  # [win]
         - openmpi=4  # [unix]
         - gsl
-        - nexus
+        - libnexus
         - nexpy
         - ncrystal  # [unix]
         - mcpl  # [unix]

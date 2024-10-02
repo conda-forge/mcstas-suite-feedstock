@@ -118,7 +118,7 @@ outputs:
         - msmpi  # [win]
         - openmpi=4  # [unix]
         - gsl
-        - nexus
+        - libnexus
         - nexpy
         - ncrystal  # [unix]
         - mcpl  # [unix]

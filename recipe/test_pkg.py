@@ -15,6 +15,9 @@ import platform
 def AbsPath( p ):
     return pathlib.Path(p).absolute().resolve()
 
+def DirName( p ):
+    return pathlib.Path(p).parents[0].absolute().resolve()
+
 conda_prefix_dir = AbsPath( os.environ.get('PREFIX','') )
 assert conda_prefix_dir.is_dir()
 work_dir = AbsPath('.')
@@ -74,7 +77,7 @@ def run_instrument_file( instrumentfile, parameters = '' ):
     if not f.exists():
         raise SystemExit(f'File not found: {instrumentfile} (resolved: {f})')
     with work_in_tmpdir():
-        shutil.copy(f,str(AbsPath('.')))
+        shutil.copytree(DirName(f),str(AbsPath('.')))
         launch( f'mcstas {f.name}' )
         pars = '' if not parameters else ' %s'%parameters
         if platform.system().lower()=='windows':

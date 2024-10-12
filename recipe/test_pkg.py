@@ -77,7 +77,7 @@ def run_instrument_file( instrumentfile, parameters = '' ):
     if not f.exists():
         raise SystemExit(f'File not found: {instrumentfile} (resolved: {f})')
     with work_in_tmpdir():
-        shutil.copytree(DirName(f),str(AbsPath('.')))
+        shutil.copytree(DirName(f),str(AbsPath('.')),dirs_exist_ok=True)
         launch( f'mcstas {f.name}' )
         pars = '' if not parameters else ' %s'%parameters
         if platform.system().lower()=='windows':

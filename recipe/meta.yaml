@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -47,6 +47,8 @@ outputs:
         # for sync of 3D / js files
         - rsync  # [unix]
         - mcstasscript
+        # for visualisation of test output
+        - jinja2
     test:
       files:
         - test_pkg.py

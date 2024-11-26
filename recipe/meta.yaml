@@ -122,7 +122,7 @@ outputs:
         - gsl
         - libnexus
         - nexpy
-        - cif2hkl
+        #- cif2hkl
         - ncrystal  # [unix]
         - mcpl  # [unix]
 

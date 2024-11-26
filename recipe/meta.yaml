@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -122,6 +122,7 @@ outputs:
         - gsl
         - libnexus
         - nexpy
+        - cif2hkl
         - ncrystal  # [unix]
         - mcpl  # [unix]
 

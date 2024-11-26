@@ -7,12 +7,12 @@ language: shell
 
 jobs:
   include:
-    - env: CONFIG=linux_aarch64_nodejs18 UPLOAD_PACKAGES=True PLATFORM=linux-aarch64 DOCKER_IMAGE=quay.io/condaforge/linux-anvil-aarch64
+    - env: CONFIG=linux_aarch64_nodejs20 UPLOAD_PACKAGES=True PLATFORM=linux-aarch64 DOCKER_IMAGE=quay.io/condaforge/linux-anvil-aarch64:alma9
       os: linux
       arch: arm64
       dist: focal
 
-    - env: CONFIG=linux_aarch64_nodejs20 UPLOAD_PACKAGES=True PLATFORM=linux-aarch64 DOCKER_IMAGE=quay.io/condaforge/linux-anvil-aarch64
+    - env: CONFIG=linux_aarch64_nodejs22 UPLOAD_PACKAGES=True PLATFORM=linux-aarch64 DOCKER_IMAGE=quay.io/condaforge/linux-anvil-aarch64:alma9
       os: linux
       arch: arm64
       dist: focal

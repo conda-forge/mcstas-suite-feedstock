@@ -1,4 +1,4 @@
-{% set version = "3.5.15" %}
+{% set version = "3.5.16" %}
 
 package:
   name: mcstas-suite
@@ -8,7 +8,7 @@ package:
 # curl -sL url | openssl sha256
 source:
   url: https://github.com/McStasMcXtrace/McCode/archive/v{{ version }}.tar.gz
-  sha256: d93d7dc6d347ef23a007830c2531ba69c69d9ceac8f79ac572a865b6668ef0af
+  sha256: ac6e4923ef752ce44dd8a9dda53a367dcae99d342b7e30322ee0c3e179eb7cfb
   folder: src
 
 build:
@@ -97,6 +97,7 @@ outputs:
         - pillow
         - pyqtgraph
         - pyqt >=5.10
+        - qtpy
         - nodejs
     test:
       files:

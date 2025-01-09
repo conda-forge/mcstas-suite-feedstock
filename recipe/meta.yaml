@@ -120,6 +120,7 @@ outputs:
         - {{ pin_subpackage('mcstas-vis', max_pin="x.x.x") }}
         - msmpi  # [win]
         - openmpi=4  # [unix]
+        - ucx  # [linux]
         - gsl
         - libnexus
         - nexpy

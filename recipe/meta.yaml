@@ -37,6 +37,7 @@ outputs:
         - bash  # [unix]
         # for mcrun
         - pyaml
+        - ply
         - mslex  # [win]
     test:
       files:

@@ -41,10 +41,11 @@ def ensure_files_are_installed( file_list ):
 def launch( cmd, **kwargs ):
     print(f'Invoking command: {cmd}')
     res = subprocess.run( shlex.split(cmd), **kwargs )
-    print("Outputs, stdout:")
+    print("--- Outputs, stdout:")
     print(res.stdout)
-    print("Outputs, stderr:")
+    print("--- Outputs, stderr:")
     print(res.stderr)
+    print("---")
     if res.returncode != 0:
         raise SystemExit(f'Command "{cmd}" failed!')
     return res
@@ -90,19 +91,6 @@ def run_instrument_file( instrumentfile, parameters = '' ):
             launch( f'mcrun -c {f.name}{pars}' )
 
 def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
-    
-    if platform.system().lower()=='windows':
-        launch("type share/mcstas/tools/Python/mccodelib/mccode_config.json", capture_output = True, text = True )
-    else:
-        res=launch("echo $PATH", capture_output = True, text = True )
-        print(res.stdout)
-        print(res.stderr)
-        res=launch("which mcrun", capture_output = True, text = True )
-        print(res.stdout)
-        print(res.stderr)
-        res=launch("cat "+str(conda_prefix_dir)+"/share/mcstas/tools/Python/mccodelib/mccode_config.json", capture_output = True, text = True )
-        print(res.stdout)
-        print(res.stderr)
     mcrun_resourcedir = query_mcrun_showcfgdir( 'resourcedir', must_exist = True )
     query_mcrun_showcfgdir( 'libdir', must_exist = False )
     mcrun_bindir = query_mcrun_showcfgdir( 'bindir', must_exist = True )
@@ -121,7 +109,6 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
         ensure_basic_commands_run( [
             'mcstas.exe --help',
             'mcstas.exe --version',
-            'type share/mcstas/tools/Python/mccodelib/mccode_config.json',
             'mcrun.bat --showcfg bindir',
             'mcrun.bat --showcfg resourcedir',
             'mcrun.bat --showcfg libdir',
@@ -137,7 +124,6 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
         ensure_basic_commands_run( [
             'mcstas --help',
             'mcstas --version',
-            'cat share/mcstas/tools/Python/mccodelib/mccode_config.json',
             'mcrun --showcfg bindir',
             'mcrun --showcfg resourcedir',
             'mcrun --showcfg libdir',

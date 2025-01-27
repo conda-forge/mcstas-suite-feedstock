@@ -92,7 +92,7 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
     else:
         print(launch("echo $PATH", capture_output = True, text = True ))
         print(launch("which mcrun", capture_output = True, text = True ))
-        print(launch("cat $PREFIX/share/mcstas/tools/Python/mccodelib/mccode_config.json", capture_output = True, text = True ))
+        print(launch("cat "+conda_prefix_dir+"/share/mcstas/tools/Python/mccodelib/mccode_config.json", capture_output = True, text = True ))
         print(launch("mcrun --version", capture_output = True, text = True ))
     mcrun_resourcedir = query_mcrun_showcfgdir( 'resourcedir', must_exist = True )
     query_mcrun_showcfgdir( 'libdir', must_exist = False )

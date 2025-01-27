@@ -28,6 +28,8 @@ outputs:
         - flex  # [unix]
         - bison  # [unix]
         - winflexbison  # [win]
+        - shlex  # [unix]
+        - mslex  # [win]
         - msmpi  # [win]
         - openmpi=4  # [unix]
       host:
@@ -40,6 +42,7 @@ outputs:
         # for mcrun
         - pyaml
         - ply
+        - shlex  # [unix]
         - mslex  # [win]
     test:
       files:

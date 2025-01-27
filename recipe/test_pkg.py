@@ -86,6 +86,10 @@ def run_instrument_file( instrumentfile, parameters = '' ):
             launch( f'mcrun -c {f.name}{pars}' )
 
 def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
+    if platform.system().lower()=='windows':
+        launch("type share/mcstas/tools/Python/mccodelib/mccode_config.json", capture_output = True, text = True )
+    else:
+        launch("cat share/mcstas/tools/Python/mccodelib/mccode_config.json", capture_output = True, text = True )
     mcrun_resourcedir = query_mcrun_showcfgdir( 'resourcedir', must_exist = True )
     query_mcrun_showcfgdir( 'libdir', must_exist = False )
     mcrun_bindir = query_mcrun_showcfgdir( 'bindir', must_exist = True )

@@ -38,6 +38,7 @@ outputs:
         # for mcrun
         - pyaml
         - numpy
+        - mslex  # [win]
     test:
       files:
         - test_pkg.py

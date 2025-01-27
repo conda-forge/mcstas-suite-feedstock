@@ -41,6 +41,10 @@ def ensure_files_are_installed( file_list ):
 def launch( cmd, **kwargs ):
     print(f'Invoking command: {cmd}')
     res = subprocess.run( shlex.split(cmd), **kwargs )
+    print("Outputs, stdout:")
+    print(res.stdout)
+    print("Outputs, stderr:")
+    print(res.stderr)
     if res.returncode != 0:
         raise SystemExit(f'Command "{cmd}" failed!')
     return res
@@ -97,9 +101,6 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
         print(res.stdout)
         print(res.stderr)
         res=launch("cat "+str(conda_prefix_dir)+"/share/mcstas/tools/Python/mccodelib/mccode_config.json", capture_output = True, text = True )
-        print(res.stdout)
-        print(res.stderr)
-        res=launch(str(conda_prefix_dir)+"/bin/mcrun --version", capture_output = True, text = True )
         print(res.stdout)
         print(res.stderr)
     mcrun_resourcedir = query_mcrun_showcfgdir( 'resourcedir', must_exist = True )

@@ -28,6 +28,8 @@ outputs:
         - flex  # [unix]
         - bison  # [unix]
         - winflexbison  # [win]
+        - msmpi  # [win]
+        - openmpi=4  # [unix]
       host:
         - dirent  # [win]
       run:

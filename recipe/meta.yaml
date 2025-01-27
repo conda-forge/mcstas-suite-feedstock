@@ -28,9 +28,6 @@ outputs:
         - flex  # [unix]
         - bison  # [unix]
         - winflexbison  # [win]
-        - mslex  # [win]
-        - msmpi  # [win]
-        - openmpi=4  # [unix]
       host:
         - dirent  # [win]
       run:
@@ -40,10 +37,7 @@ outputs:
         - bash  # [unix]
         # for mcrun
         - pyaml
-        - pyyaml
-        - yaml
-        - ply
-        - mslex  # [win]
+        - numpy
     test:
       files:
         - test_pkg.py

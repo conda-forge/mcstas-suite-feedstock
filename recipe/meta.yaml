@@ -32,7 +32,7 @@ outputs:
         - dirent  # [win]
       run:
         - python
-        - {{ compiler('c') }}
+        - c-compiler
         - {{ stdlib("c") }}
         - bash  # [unix]
         # for mcrun

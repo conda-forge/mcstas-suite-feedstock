@@ -40,6 +40,8 @@ outputs:
         - bash  # [unix]
         # for mcrun
         - pyaml
+        - pyyaml
+        - yaml
         - ply
         - mslex  # [win]
     test:

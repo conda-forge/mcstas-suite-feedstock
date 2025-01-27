@@ -104,6 +104,7 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
         ensure_basic_commands_run( [
             'mcstas.exe --help',
             'mcstas.exe --version',
+            'type share/mcstas/tools/Python/mccodelib/mccode_config.json',
             'mcrun.bat --showcfg bindir',
             'mcrun.bat --showcfg resourcedir',
             'mcrun.bat --showcfg libdir',
@@ -119,6 +120,7 @@ def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
         ensure_basic_commands_run( [
             'mcstas --help',
             'mcstas --version',
+            'cat share/mcstas/tools/Python/mccodelib/mccode_config.json',
             'mcrun --showcfg bindir',
             'mcrun --showcfg resourcedir',
             'mcrun --showcfg libdir',

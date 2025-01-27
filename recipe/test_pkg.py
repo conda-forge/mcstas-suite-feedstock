@@ -41,6 +41,11 @@ def ensure_files_are_installed( file_list ):
 def launch( cmd, **kwargs ):
     print(f'Invoking command: {cmd}')
     res = subprocess.run( shlex.split(cmd), **kwargs )
+    print("--- Outputs, stdout:")
+    print(res.stdout)
+    print("--- Outputs, stderr:")
+    print(res.stderr)
+    print("---")
     if res.returncode != 0:
         raise SystemExit(f'Command "{cmd}" failed!')
     return res

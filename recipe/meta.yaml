@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -28,27 +28,17 @@ outputs:
         - flex  # [unix]
         - bison  # [unix]
         - winflexbison  # [win]
-        - mslex  # [win]
-        - nodejs
-        - msmpi  # [win]
-        - openmpi=4  # [unix]
       host:
         - dirent  # [win]
       run:
         - python
-        - {{ compiler('c') }}
+        - c-compiler
         - {{ stdlib("c") }}
         - bash  # [unix]
         # for mcrun
         - pyaml
-        # for traces from mcrun
-        - ply
+        - numpy
         - mslex  # [win]
-        # for sync of 3D / js files
-        - rsync  # [unix]
-        - mcstasscript
-        # for visualisation of test output
-        - jinja2
     test:
       files:
         - test_pkg.py
@@ -99,6 +89,17 @@ outputs:
         - pyqt >=5.10
         - qtpy
         - nodejs
+        # for traces from mcdisplay
+        - ply
+        # for sync of 3D / js files
+        - rsync  # [unix]
+        # for visualisation of test output
+        - jinja2
+        # McStasscript and jupyter support
+        - mcstasscript
+        - jupytext
+        - jupyterlab
+
     test:
       files:
         - test_pkg.py

@@ -99,6 +99,8 @@ outputs:
         - mcstasscript
         - jupytext
         - jupyterlab
+        - m2-which  # [win]
+        - m2-sed  # [win]
 
     test:
       files:

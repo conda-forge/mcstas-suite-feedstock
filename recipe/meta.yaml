@@ -129,8 +129,8 @@ outputs:
         - libnexus
         - nexpy
         - cif2hkl
-        - ncrystal  # [unix]
         - mcpl  # [unix]
+        - ncrystal  # [unix]
 
 about:
   home: https://mcstas.org/

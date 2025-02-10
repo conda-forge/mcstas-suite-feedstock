@@ -130,7 +130,7 @@ outputs:
         - nexpy
         - cif2hkl
         - mcpl  # [unix]
-        - ncrystal  # [unix]
+        - ncrystal >= 4.0
 
 about:
   home: https://mcstas.org/

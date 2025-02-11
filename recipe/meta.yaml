@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -101,6 +101,7 @@ outputs:
         - jupyterlab
         - m2-which  # [win]
         - m2-sed  # [win]
+        - m2-gzip  # [win]
 
     test:
       files:
@@ -128,8 +129,8 @@ outputs:
         - libnexus
         - nexpy
         - cif2hkl
-        - ncrystal  # [unix]
         - mcpl  # [unix]
+        - ncrystal >=4.0.0
 
 about:
   home: https://mcstas.org/

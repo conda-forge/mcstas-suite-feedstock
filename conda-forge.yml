@@ -7,7 +7,7 @@ github:
   branch_name: main
   tooling_branch_name: main
 provider:
-   linux_aarch64: travis
-test: native_and_emulated
+   linux_aarch64: default
+test: native
 bot:
   automerge: true

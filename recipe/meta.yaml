@@ -142,7 +142,7 @@ about:
   license_family: GPL3
   license_file: src/COPYING
   doc_url: https://mcstas.org/
-  dev_url: https://github.com/McStasMcXtrace/McCode
+  dev_url: https://github.com/mccode-dev/McCode
 
 extra:
   recipe-maintainers:

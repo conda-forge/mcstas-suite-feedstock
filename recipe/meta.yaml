@@ -7,12 +7,12 @@ package:
 # sha256 value manually found by
 # curl -sL url | openssl sha256
 source:
-  url: https://github.com/McStasMcXtrace/McCode/archive/v{{ version }}.tar.gz
+  url: https://github.com/McStasMcXtrace/mccode-dev/archive/v{{ version }}.tar.gz
   sha256: b1958a24b6b7e06e65ff3fc302da6d306412fdaee15ac77fadf841e1521b773a
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 

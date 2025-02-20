@@ -9,7 +9,7 @@ Package license: GPL-3.0-only
 
 Summary: McStas is a general tool for simulating neutron scattering instruments and experiments.
 
-Development: https://github.com/mccode-dev/McCode
+Development: https://github.com/McStasMcXtrace/McCode
 
 Documentation: https://mcstas.org/
 

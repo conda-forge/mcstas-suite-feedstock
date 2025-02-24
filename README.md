@@ -9,7 +9,7 @@ Package license: GPL-3.0-only
 
 Summary: McStas is a general tool for simulating neutron scattering instruments and experiments.
 
-Development: https://github.com/McStasMcXtrace/McCode
+Development: https://github.com/mccode-dev/McCode
 
 Documentation: https://mcstas.org/
 
@@ -86,6 +86,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-mcstas--core-green.svg)](https://anaconda.org/conda-forge/mcstas-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mcstas-core.svg)](https://anaconda.org/conda-forge/mcstas-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mcstas-core.svg)](https://anaconda.org/conda-forge/mcstas-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mcstas-core.svg)](https://anaconda.org/conda-forge/mcstas-core) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-mcstas--data-green.svg)](https://anaconda.org/conda-forge/mcstas-data) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mcstas-data.svg)](https://anaconda.org/conda-forge/mcstas-data) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mcstas-data.svg)](https://anaconda.org/conda-forge/mcstas-data) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mcstas-data.svg)](https://anaconda.org/conda-forge/mcstas-data) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-mcstas--mcgui-green.svg)](https://anaconda.org/conda-forge/mcstas-mcgui) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mcstas-mcgui.svg)](https://anaconda.org/conda-forge/mcstas-mcgui) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mcstas-mcgui.svg)](https://anaconda.org/conda-forge/mcstas-mcgui) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mcstas-mcgui.svg)](https://anaconda.org/conda-forge/mcstas-mcgui) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-mcstas--ompi5-green.svg)](https://anaconda.org/conda-forge/mcstas-ompi5) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mcstas-ompi5.svg)](https://anaconda.org/conda-forge/mcstas-ompi5) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mcstas-ompi5.svg)](https://anaconda.org/conda-forge/mcstas-ompi5) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mcstas-ompi5.svg)](https://anaconda.org/conda-forge/mcstas-ompi5) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-mcstas--vis-green.svg)](https://anaconda.org/conda-forge/mcstas-vis) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mcstas-vis.svg)](https://anaconda.org/conda-forge/mcstas-vis) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mcstas-vis.svg)](https://anaconda.org/conda-forge/mcstas-vis) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mcstas-vis.svg)](https://anaconda.org/conda-forge/mcstas-vis) |
 
 Installing mcstas-suite
@@ -98,16 +99,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `mcstas, mcstas-core, mcstas-data, mcstas-mcgui, mcstas-vis` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `mcstas, mcstas-core, mcstas-data, mcstas-mcgui, mcstas-ompi5, mcstas-vis` can be installed with `conda`:
 
 ```
-conda install mcstas mcstas-core mcstas-data mcstas-mcgui mcstas-vis
+conda install mcstas mcstas-core mcstas-data mcstas-mcgui mcstas-ompi5 mcstas-vis
 ```
 
 or with `mamba`:
 
 ```
-mamba install mcstas mcstas-core mcstas-data mcstas-mcgui mcstas-vis
+mamba install mcstas mcstas-core mcstas-data mcstas-mcgui mcstas-ompi5 mcstas-vis
 ```
 
 It is possible to list all of the versions of `mcstas` available on your platform with `conda`:

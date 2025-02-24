@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 1
+  number: 2
 
 outputs:
 
@@ -124,6 +124,29 @@ outputs:
         - {{ pin_subpackage('mcstas-vis', max_pin="x.x.x") }}
         - msmpi  # [win]
         - openmpi=4  # [unix]
+        - ucx  # [linux]
+        - gsl
+        - libnexus
+        - nexpy
+        - cif2hkl
+        - mcpl  # [unix]
+        - ncrystal >=4.0.0
+
+  - name: mcstas-ompi5
+    test:
+      files:
+        - test_pkg.py
+      requires:
+      commands:
+        - python test_pkg.py mcstas
+    requirements:
+      run:
+        - {{ pin_subpackage('mcstas-core', max_pin="x.x.x") }}
+        - {{ pin_subpackage('mcstas-data', max_pin="x.x.x") }}
+        - {{ pin_subpackage('mcstas-mcgui', max_pin="x.x.x") }}
+        - {{ pin_subpackage('mcstas-vis', max_pin="x.x.x") }}
+        - msmpi  # [win]
+        - openmpi>=5  # [unix]
         - ucx  # [linux]
         - gsl
         - libnexus

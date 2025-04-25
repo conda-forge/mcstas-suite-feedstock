@@ -4,7 +4,7 @@ package:
   name: mcstas-suite
   version: {{ version }}
 
-# sha256 value manually found by
+# sha256 value manually found by 
 # curl -sL url | openssl sha256
 source:
   url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz

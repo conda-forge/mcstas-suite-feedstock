@@ -1,4 +1,4 @@
-{% set version = "3.5.25" %}
+{% set version = "3.5.26" %}
 
 package:
   name: mcstas-suite
@@ -129,7 +129,9 @@ outputs:
         - libnexus
         - nexpy
         - cif2hkl
-        - mcpl  # [unix]
+        - mcpl >=2.0.0
+        - mcpl-core >=2.0.0
+        - mcpl-extra >=2.0.0
         - ncrystal >=4.0.0
 
 about:

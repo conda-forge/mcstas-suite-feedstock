@@ -8,7 +8,7 @@ package:
 # curl -sL url | openssl sha256
 source:
   url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
-  sha256: b6cd2625376fcd8ba5c4593fe0f344fcb69ea5924d87cfc265077d0523475b2e
+  sha256: 7fabe31c51bbbb8d81be8ad5768fd7d49e58d89bc0a844162c979f3145b2450d
   folder: src
 
 build:

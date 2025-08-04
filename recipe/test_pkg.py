@@ -190,8 +190,8 @@ def tests_for_pkg_mcstas():
     if not f_Be_laz.exists():
         raise SystemExit('Did not find Be.laz in expected location')
 
-    if platform.system().lower()=='windows':
-        print('Windows detected - skipping NCrystal/MCPL/mpi tests')
+    if 'ppc' in platform.processor().lower():
+        print('ppc processor detected - skipping NCrystal/MCPL/mpi tests')
         return
 
     #MPI test (disabled for now):

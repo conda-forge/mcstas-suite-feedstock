@@ -1,4 +1,4 @@
-{% set version = "3.5.32" %}
+{% set version = "3.5.33" %}
 
 package:
   name: mcstas-suite
@@ -8,7 +8,7 @@ package:
 # curl -sL url | openssl sha256
 source:
   url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
-  sha256: 5abc3be2ef90fbfc10be312f8296df9d3711d69adf7b747ae684c28d83609616
+  sha256: 993c0a1efd7bb22fd76c362a656350c9a284ecbca038ca1c184ec440ca8ae958
   folder: src
 
 build:
@@ -129,10 +129,10 @@ outputs:
         - libnexus
         - nexpy
         - cif2hkl
-        - mcpl >=2.2.0
-        - mcpl-core >=2.2.0
-        - mcpl-extra >=2.2.0
-        - ncrystal >=4.2.0
+        - mcpl >=2.2.0  # [not ppc64le]
+        - mcpl-core >=2.2.0  # [not ppc64le]
+        - mcpl-extra >=2.2.0  # [not ppc64le]
+        - ncrystal >=4.2.0  # [not ppc64le]
 
 about:
   home: https://mcstas.org/

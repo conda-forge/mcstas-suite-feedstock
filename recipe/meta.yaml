@@ -129,10 +129,10 @@ outputs:
         - libnexus
         - nexpy
         - cif2hkl
-        - mcpl >=2.2.0
-        - mcpl-core >=2.2.0
-        - mcpl-extra >=2.2.0
-        - ncrystal >=4.2.0
+        - mcpl >=2.2.0  # [not ppc64le]
+        - mcpl-core >=2.2.0  # [not ppc64le]
+        - mcpl-extra >=2.2.0  # [not ppc64le]
+        - ncrystal >=4.2.0  # [not ppc64le]
 
 about:
   home: https://mcstas.org/

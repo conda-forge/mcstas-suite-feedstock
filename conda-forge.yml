@@ -8,7 +8,8 @@ github:
   tooling_branch_name: main
 provider:
    linux_aarch64: default
-   linux_ppc64le: default
+   # disable ppc64le for now as some dependencies are not resolved
+   # linux_ppc64le: default
 test: native_and_emulated
 bot:
   automerge: true

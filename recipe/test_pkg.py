@@ -193,7 +193,7 @@ def tests_for_pkg_mcstas():
     #Basic MPI test
     run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2')
 
-        if 'ppc' in platform.processor().lower():
+    if 'ppc' in platform.processor().lower():
         print('ppc processor detected - skipping NCrystal/MCPL/mpi tests')
         return
 

@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -42,6 +42,8 @@ outputs:
     test:
       files:
         - test_pkg.py
+      requires:
+        - openssh  # [linux]
       commands:
         - python test_pkg.py core
       source_files:

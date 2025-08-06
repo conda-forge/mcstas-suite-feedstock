@@ -193,6 +193,7 @@ def tests_for_pkg_mcstas():
     #MPI test
     if 'linux' in platform.system().lower():
         print('linux detected - attempting to run only a single process')
+        os.environ["OMPI_MCA_plm_ssh_agent"] = "false"
         run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=1 --verbose')
     else:
         run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2 --verbose')

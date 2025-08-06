@@ -190,6 +190,7 @@ def tests_for_pkg_mcstas():
     if not f_Be_laz.exists():
         raise SystemExit('Did not find Be.laz in expected location')
 
+    os.environ["OMPI_MCA_plm_ssh_agent"]="false"
     #Basic MPI test
     run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2')
 

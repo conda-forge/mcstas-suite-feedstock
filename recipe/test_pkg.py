@@ -204,10 +204,6 @@ def tests_for_pkg_mcstas():
     #NCrystal test with NCrystal-shipped data:
     run_instrument_file( 'share/mcstas/resources/examples/NCrystal/NCrystal_example/NCrystal_example.instr','sample_cfg=Al_sg225.ncmat -s1000 -n1e5' )
 
-    #NCrystal test with data from mcstas-data package:
-    #  Note: skipped since  .laz/.lau/.nxs support no longer enabled by default in NCrystal (requires custom plugin):
-    #  run_instrument_file( 'share/mcstas/resources/examples/NCrystal/NCrystal_example/NCrystal_example.instr','sample_cfg=%s -s1000 -n1e5'%shlex.quote(f_Be_laz) )
-
     #NCrystal+Union test:
     run_instrument_file( 'share/mcstas/resources/examples/NCrystal/Union_NCrystal_example/Union_NCrystal_example.instr','-s1000 -n1e5' )
 

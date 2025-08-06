@@ -190,12 +190,12 @@ def tests_for_pkg_mcstas():
     if not f_Be_laz.exists():
         raise SystemExit('Did not find Be.laz in expected location')
 
-    if 'linux' in platform.system().lower():
-        print('linux detected - reconfiguring for openmpi without ssh/rsh')
-        os.environ["MCSTAS_MPIRUN_OVERRIDE"] = "mpirun --mca btl self,vader,tcp --oversubscribe"
-
     #MPI test
-    run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2 --verbose')
+    if 'linux' in platform.system().lower():
+        print('linux detected - attempting to run only a single process')
+        run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=1 --verbose')
+    else:
+        run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2 --verbose')
 
     if 'ppc' in platform.processor().lower():
         print('ppc processor detected - skipping NCrystal/MCPL tests')

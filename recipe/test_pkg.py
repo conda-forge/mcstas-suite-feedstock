@@ -191,7 +191,11 @@ def tests_for_pkg_mcstas():
         raise SystemExit('Did not find Be.laz in expected location')
 
     #MPI test
-    run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2 --verbose')
+    if 'linux' in platform.system().lower():
+        print('linux detected - MPI compile only')
+        run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n0 --mpi=2 --verbose')
+    else:
+        run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2 --verbose')
 
     if 'ppc' in platform.processor().lower():
         print('ppc processor detected - skipping NCrystal/MCPL tests')

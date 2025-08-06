@@ -190,12 +190,16 @@ def tests_for_pkg_mcstas():
     if not f_Be_laz.exists():
         raise SystemExit('Did not find Be.laz in expected location')
 
-    if 'ppc' in platform.processor().lower():
-        print('ppc processor detected - skipping NCrystal/MCPL/mpi tests')
-        return
+    #MPI test
+    if 'linux' in platform.system().lower():
+        print('linux detected - MPI compile only')
+        run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n0 --mpi=2 --verbose')
+    else:
+        run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2 --verbose')
 
-    #MPI test (disabled for now):
-    #run_instrument_file( 'share/mcstas/resources/examples/BNL/BNL_H8/BNL_H8.instr', 'lambda=2.36 -s1000 -n1e5 --mpi=2')
+    if 'ppc' in platform.processor().lower():
+        print('ppc processor detected - skipping NCrystal/MCPL tests')
+        return
 
     #MCPL test:
     run_instrument_file( 'share/mcstas/resources/examples/Tests_MCPL_etc/Test_MCPL_input/Test_MCPL_input.instr', '-s1000 repeat=1')
@@ -203,10 +207,6 @@ def tests_for_pkg_mcstas():
 
     #NCrystal test with NCrystal-shipped data:
     run_instrument_file( 'share/mcstas/resources/examples/NCrystal/NCrystal_example/NCrystal_example.instr','sample_cfg=Al_sg225.ncmat -s1000 -n1e5' )
-
-    #NCrystal test with data from mcstas-data package:
-    #  Note: skipped since  .laz/.lau/.nxs support no longer enabled by default in NCrystal (requires custom plugin):
-    #  run_instrument_file( 'share/mcstas/resources/examples/NCrystal/NCrystal_example/NCrystal_example.instr','sample_cfg=%s -s1000 -n1e5'%shlex.quote(f_Be_laz) )
 
     #NCrystal+Union test:
     run_instrument_file( 'share/mcstas/resources/examples/NCrystal/Union_NCrystal_example/Union_NCrystal_example.instr','-s1000 -n1e5' )

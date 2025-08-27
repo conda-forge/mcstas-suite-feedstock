@@ -212,6 +212,3 @@ Feedstock Maintainers
 * [@tkittel](https://github.com/tkittel/)
 * [@willend](https://github.com/willend/)
 
-
-<!-- dummy commit to enable rerendering -->
-

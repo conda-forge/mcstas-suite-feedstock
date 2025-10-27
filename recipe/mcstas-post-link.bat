@@ -1,2 +1,2 @@
 @echo off
-"%PREFIX%\bin\mcdoc.bat" -i
+"%CONDA_PREFIX%\bin\mcdoc.bat" -i

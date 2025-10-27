@@ -1,1 +1,1 @@
-set MCSTAS="%CONDA_PREFIX%\share\mcstas\resources"
+set MCSTAS="%PREFIX%\share\mcstas\resources"

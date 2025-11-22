@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -103,6 +103,7 @@ outputs:
         - m2-sed  # [win]
         - m2-grep  # [win]
         - m2-gzip  # [win]
+        - m2-coreutils  # [win]
 
     test:
       files:

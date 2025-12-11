@@ -96,7 +96,7 @@ outputs:
         # for visualisation of test output
         - jinja2
         # for creating CAD output from mcdisplay
-        - cadquery
+        - cadquery  # [not ppc64le]
         # McStasscript and jupyter support
         - mcstasscript
         - jupytext

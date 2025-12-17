@@ -1,4 +1,4 @@
-{% set version = "3.6.1" %}
+{% set version = "3.6.2" %}
 
 package:
   name: mcstas-suite
@@ -8,7 +8,7 @@ package:
 # curl -sL url | openssl sha256
 source:
   url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
-  sha256: b9359f400b348261675fd026a4c1c0dc1b3c46bd396e875d439d78e3dd667815
+  sha256: 9efe1a1af45d869fbde49f5245ae56af6d59f99d2930dcee7cc8f4b6e03ff153
   folder: src
 
 build:

@@ -86,7 +86,7 @@ outputs:
         - scipy
         - pillow
         - pyqtgraph
-        - pyqt >=5.10
+        - pyqt6
         - qtpy
         - nodejs
         # for traces from mcdisplay

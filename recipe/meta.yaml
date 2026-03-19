@@ -65,7 +65,7 @@ outputs:
     requirements:
       run:
         - mcstas-core
-        - pyqt6  # [not linux and aarch64]
+        - pyqt6  # [not (linux and aarch64)]
         - pyqt >=5.10  # [linux and aarch64]
     test:
       files:
@@ -86,7 +86,7 @@ outputs:
         - scipy
         - pillow
         - pyqtgraph
-        - pyqt6  # [not linux and aarch64]
+        - pyqt6  # [not (linux and aarch64)]
         - pyqt >=5.10  # [linux and aarch64]
         - qtpy
         - nodejs

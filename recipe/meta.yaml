@@ -66,7 +66,6 @@ outputs:
       run:
         - mcstas-core
         - pyqt6
-        #- qscintilla2
     test:
       files:
         - test_pkg.py

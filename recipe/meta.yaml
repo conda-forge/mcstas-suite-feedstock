@@ -65,7 +65,7 @@ outputs:
     requirements:
       run:
         - mcstas-core
-        - pyqt6
+        - pyqt
     test:
       files:
         - test_pkg.py
@@ -85,7 +85,7 @@ outputs:
         - scipy
         - pillow
         - pyqtgraph
-        - pyqt6
+        - pyqt
         - qtpy
         - nodejs
         # for traces from mcdisplay

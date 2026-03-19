@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -65,8 +65,8 @@ outputs:
     requirements:
       run:
         - mcstas-core
-        - pyqt
-        - qscintilla2
+        - pyqt6
+        #- qscintilla2
     test:
       files:
         - test_pkg.py

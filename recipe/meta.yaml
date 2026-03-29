@@ -39,6 +39,7 @@ outputs:
         - pyaml
         - numpy
         - mslex  # [win]
+        - dirent  # [win]
         # for mctest
         - psutil
     test:

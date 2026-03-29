@@ -1,4 +1,4 @@
-{% set version = "3.6.8" %}
+{% set version = "3.6.9" %}
 
 package:
   name: mcstas-suite
@@ -8,11 +8,11 @@ package:
 # curl -sL url | openssl sha256
 source:
   url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
-  sha256: 3912a9e152614c2081879b3fac52b7b4fd2f16f40017cb7cff6c1f87e23028ce
+  sha256: 20b55bbd6809cb1d0976eafe36a65bd442009c04042421e478061ab84a8ee7e1
   folder: src
 
 build:
-  number: 1
+  number: 0
 
 outputs:
 
@@ -39,6 +39,9 @@ outputs:
         - pyaml
         - numpy
         - mslex  # [win]
+        - dirent  # [win]
+        # for mctest
+        - psutil
     test:
       files:
         - test_pkg.py

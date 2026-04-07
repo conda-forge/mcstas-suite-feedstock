@@ -1,4 +1,4 @@
-{% set version = "3.6.11" %}
+{% set version = "3.6.12" %}
 
 package:
   name: mcstas-suite
@@ -8,7 +8,7 @@ package:
 # curl -sL url | openssl sha256
 source:
   url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
-  sha256: 76d1b59c16cb73295046baef331dadc3490382b3c05a5050ffcba8fa43648786
+  sha256: 9cfd546e64d418d159a10c1e7d11245fced2411391af83f16abe11af8dafc9be
   folder: src
 
 build:
@@ -68,8 +68,8 @@ outputs:
     requirements:
       run:
         - mcstas-core
-        - pyqt6  # [not (linux and aarch64)]
-        - pyqt >=5.10  # [linux and aarch64]
+        - pyqt >=5.10
+        - qscintilla2
     test:
       files:
         - test_pkg.py
@@ -89,8 +89,7 @@ outputs:
         - scipy
         - pillow
         - pyqtgraph
-        - pyqt6  # [not (linux and aarch64)]
-        - pyqt >=5.10  # [linux and aarch64]
+        - pyqt >=5.10
         - qtpy
         - nodejs
         # for traces from mcdisplay

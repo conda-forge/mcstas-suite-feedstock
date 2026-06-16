@@ -12,7 +12,7 @@ source:
   folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -39,7 +39,6 @@ outputs:
         - pyaml
         - numpy
         - mslex  # [win]
-        - dirent  # [win]
         # for mctest
         - psutil
     test:

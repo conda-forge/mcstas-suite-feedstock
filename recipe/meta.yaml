@@ -138,9 +138,9 @@ outputs:
         - mcpl >=2.2.0  # [not ppc64le]
         - mcpl-core >=2.2.0  # [not ppc64le]
         - mcpl-extra >=2.2.0  # [not ppc64le]
+        - kdsource  # [not ppc64le]
         - ncrystal >=4.2.0  # [not ppc64le]
         - ncrystal-extra  # [not ppc64le]
-        - kdsource  # [not ppc64le]
 
 about:
   home: https://mcstas.org/

@@ -1,4 +1,4 @@
-{% set version = "3.7.15" %}
+{% set version = "3.7.16" %}
 
 package:
   name: mcstas-suite
@@ -8,7 +8,7 @@ package:
 # curl -sL url | openssl sha256
 source:
   url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
-  sha256: 78c18057007cf76ee7972e2dfeef5d18db0471929c6a41628a374adad232ef42
+  sha256: f932ca75c267b746ef6f17c82a1f84f17bd6a1025b6790ed708a0e39b2911d4a
   folder: src
 
 build:
@@ -100,7 +100,7 @@ outputs:
         # for creating CAD output from mcdisplay
         # - cadquery  # [not ppc64le]
         # McStasscript and jupyter support
-        - mcstasscript
+        - mcstasscript >=0.0.89
         - jupytext
         - jupyterlab
         - m2-which  # [win]

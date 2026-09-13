@@ -7,6 +7,8 @@ github:
 provider:
    linux_aarch64: default
    osx_arm64: azure
+build_platform:
+   osx_64: osx_arm64
 test: native_and_emulated
 bot:
   automerge: true

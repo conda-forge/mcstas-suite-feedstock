@@ -1,4 +1,4 @@
-{% set version = "3.8.4" %}
+{% set version = "3.8.5" %}
 {% set chopperlib_version = "v4.1.0" %}
 
 package:
@@ -9,7 +9,7 @@ package:
 # curl -sL url | openssl sha256
 source:
   - url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
-    sha256: 31249c79b393632cc00e89a4f7f7b87c26e27fedcb03d3646149f6970c3d152c
+    sha256: 52b909778d95a3ef0024add251dee5a55de87b8ddfb06372805f0db89235817c
     folder: src
   # Contributed mcstas-chopper-lib (Greg Tucker), pinned the same way as the
   # McCode source above: url+sha256 against GitHub's per-tag archive

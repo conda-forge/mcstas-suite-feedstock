@@ -1,4 +1,4 @@
-{% set version = "3.8.5" %}
+{% set version = "3.8.6" %}
 {% set chopperlib_version = "v4.1.0" %}
 
 package:
@@ -9,7 +9,7 @@ package:
 # curl -sL url | openssl sha256
 source:
   - url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
-    sha256: 52b909778d95a3ef0024add251dee5a55de87b8ddfb06372805f0db89235817c
+    sha256: b1ef908912589170a9206bf65c2757416a60176c600b96ac9b6ec9b598bcda54
     folder: src
   # Contributed mcstas-chopper-lib (Greg Tucker), pinned the same way as the
   # McCode source above: url+sha256 against GitHub's per-tag archive
@@ -26,7 +26,7 @@ source:
     folder: chopperlib
 
 build:
-  number: 1
+  number: 0
 
 outputs:
 
@@ -47,6 +47,8 @@ outputs:
         - python
         - c-compiler
         - {{ stdlib("c") }}
+        - msmpi  # [win]
+        - openmpi =4  # [unix]
         - bash  # [unix]
         # for mcrun
         - pyaml

@@ -86,9 +86,9 @@ def run_instrument_file( instrumentfile, parameters = '' ):
         launch( f'mcstas {f.name}' )
         pars = '' if not parameters else ' %s'%parameters
         if platform.system().lower()=='windows':
-            launch( f'mcrun.bat -c --mpi=0 {f.name}{pars}' )
+            launch( f'mcrun.bat -c --no-mpi {f.name}{pars}' )
         else:
-            launch( f'mcrun -c --mpi=0 {f.name}{pars}' )
+            launch( f'mcrun -c --no-mpi {f.name}{pars}' )
 
 def common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src ):
     mcrun_resourcedir = query_mcrun_showcfgdir( 'resourcedir', must_exist = True )

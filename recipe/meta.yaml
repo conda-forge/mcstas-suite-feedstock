@@ -50,6 +50,7 @@ outputs:
         - msmpi  # [win]
         - openmpi =4  # [unix]
         - bash  # [unix]
+        - openssh  # [unix]
         # for mcrun
         - pyaml
         - numpy

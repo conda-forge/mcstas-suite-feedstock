@@ -8,8 +8,8 @@ package:
 # sha256 value manually found by 
 # curl -sL url | openssl sha256
 source:
-  url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
-  sha256: 104aed992d5c3a1475006ef1aad299394b7c8252e060f08c991a5117981146fd
+  - url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
+    sha256: 104aed992d5c3a1475006ef1aad299394b7c8252e060f08c991a5117981146fd
     folder: src
   # Contributed mcstas-chopper-lib (Greg Tucker), pinned the same way as the
   # McCode source above: url+sha256 against GitHub's per-tag archive

@@ -1,5 +1,4 @@
 {% set version = "3.8.7" %}
-{% set chopperlib_version = "v4.1.0" %}
 
 package:
   name: mcstas-suite
@@ -11,19 +10,6 @@ source:
   - url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
     sha256: 104aed992d5c3a1475006ef1aad299394b7c8252e060f08c991a5117981146fd
     folder: src
-  # Contributed mcstas-chopper-lib (Greg Tucker), pinned the same way as the
-  # McCode source above: url+sha256 against GitHub's per-tag archive
-  # tarball (confirmed reproducible/byte-identical across repeated fetches).
-  # Populated here (rather than left to McCode's own live FetchContent, see
-  # cmake/Modules/ChopperLib.cmake upstream) so the conda-forge build is
-  # reproducible/offline and its provenance is auditable from this recipe.
-  # Previously used git_url/git_rev instead -- switched away from that since
-  # it routes through conda-build's git source fetcher, which shallow-mirror
-  # clones by default and can miss a tag that isn't on the default branch's
-  # tip (see this recipe's git history for the concrete failure).
-  - url: https://github.com/mcdotstar/mcstas-chopper-lib/archive/{{ chopperlib_version }}.tar.gz
-    sha256: dc5dcb930a888a6816c212a5fd6c5d0b522b8510f7f778b7cd6d023a72456858
-    folder: chopperlib
 
 build:
   number: 0

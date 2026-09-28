@@ -1,5 +1,4 @@
 set SRCDIR=%CD%\src
-set CHOPPERLIBDIR=%CD%\chopperlib
 
 @REM A few (silent) sanity checks that variables are set and meaningful:
 if exist %PREFIX%\ echo %PREFIX% is in place
@@ -37,7 +36,7 @@ cmake ^
     -DENABLE_COMPONENTS=ON ^
     -DENSURE_MCPL=OFF ^
     -DENSURE_NCRYSTAL=OFF ^
-    -DFETCHCONTENT_SOURCE_DIR_CHOPPERLIB=%CHOPPERLIBDIR% ^
+    -DENABLE_EXTERNALS=ON ^
     -DENABLE_CIF2HKL=OFF ^
     -DENABLE_NEUTRONICS=OFF ^
     -DBUILD_SHARED_LIBS=ON ^

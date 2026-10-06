@@ -12,7 +12,7 @@ source:
     folder: src
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -32,7 +32,8 @@ outputs:
       run:
         - python
         - c-compiler
-        - {{ stdlib("c") }}
+        - {{ c_stdlib }}_{{ target_platform }} >={{ c_stdlib_version }}  # [unix]
+        - {{ stdlib("c") }}  # [win]
         - bash  # [unix]
         # for mcrun
         - pyaml

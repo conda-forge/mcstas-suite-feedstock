@@ -133,7 +133,7 @@ outputs:
         - gsl
         - libnexus
         - nexpy
-        - cif2hkl >=1.5.0
+        - cif2hkl >=1.5.1
         - mcpl >=2.2.0  # [not ppc64le]
         - mcpl-core >=2.2.0  # [not ppc64le]
         - mcpl-extra >=2.2.0  # [not ppc64le]

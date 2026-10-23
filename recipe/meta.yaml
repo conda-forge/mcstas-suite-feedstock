@@ -12,7 +12,7 @@ source:
     folder: src
 
 build:
-  number: 2
+  number: 3
 
 outputs:
 
@@ -39,6 +39,8 @@ outputs:
         - pyaml
         - numpy
         - mslex  # [win]
+        # for mcrun: merging the steps of a NeXus --scan_split scan
+        - h5py
         # for mctest
         - psutil
     test:
@@ -91,6 +93,8 @@ outputs:
         - nodejs
         # for traces from mcdisplay
         - ply
+        # for plotting NeXus (mccode.h5) output in mcplot and friends
+        - h5py
         # for sync of 3D / js files
         - rsync  # [unix]
         # for visualisation of test output

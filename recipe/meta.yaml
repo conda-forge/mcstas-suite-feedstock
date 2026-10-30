@@ -1,4 +1,4 @@
-{% set version = "3.10.0" %}
+{% set version = "3.10.1" %}
 
 package:
   name: mcstas-suite
@@ -8,7 +8,7 @@ package:
 # curl -sL url | openssl sha256
 source:
   - url: https://github.com/mccode-dev/McCode/archive/v{{ version }}.tar.gz
-    sha256: b7f8c6c327db0e28d2acef4bf1caa2d4c30901bf078c94b456653ab009e26638
+    sha256: df2c6ee7e5584b3b043e4506404e6d55a8cee5071ffe89e0b92011ff9eac8a0c
     folder: src
 
 build:
@@ -99,9 +99,6 @@ outputs:
         - rsync  # [unix]
         # for visualisation of test output
         - jinja2
-        # PW 2026/05/05 - suppress cadquery because of solver issues
-        # for creating CAD output from mcdisplay
-        # - cadquery  # [not ppc64le]
         # McStasscript and jupyter support
         - mcstasscript >=0.0.89
         - jupytext
@@ -135,7 +132,7 @@ outputs:
         - openmpi =4  # [unix]
         - ucx  # [linux]
         - gsl
-        - libnexus
+        - hdf5
         - nexpy
         - cif2hkl >=1.5.1
         - mcpl >=2.2.0  # [not ppc64le]

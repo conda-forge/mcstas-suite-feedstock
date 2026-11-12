@@ -175,6 +175,11 @@ def tests_for_pkg_data():
         raise SystemExit(f'Unexpected number ({ndata}) of data files installed')
 
 def tests_for_pkg_core():
+    mcstas_env = os.environ.get('MCSTAS')
+    if not mcstas_env:
+        raise SystemExit('MCSTAS env var is not set by mcstas-core')
+    if AbsPath(mcstas_env) != conda_prefix_dir / 'share' / 'mcstas' / 'resources':
+        raise SystemExit(f'MCSTAS env var has unexpected value: {mcstas_env}')
     if ( conda_prefix_dir / 'share' / 'mcstas' / 'resources' / 'data' ).exists():
         raise SystemExit('share/mcstas/resources/data should not be created by mcstas-core')
     common_tests_for_core_and_mcstas_pkgs( take_instr_file_from_src = True )

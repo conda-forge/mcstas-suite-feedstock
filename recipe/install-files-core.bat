@@ -61,10 +61,8 @@ cmake --build . --target install --config Release
 @REM Data files will be provided in mcstas-data package instead:
 rd /s /q %PREFIX%\share\mcstas\resources\data
 
-@REM  Activation script (simply to get $MCSTAS convenience env var to work in the
-@REM  same way as when McStas is installed in other manners.
-@REM for CHANGE in "activate" "deactivate"
-@REM do
-@REM     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
-@REM     cp "${RECIPE_DIR}/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
-@REM done
+@REM Set the %MCSTAS% convenience env var (to work in the same way as when
+@REM McStas is installed in other manners) via env_vars.d:
+if not exist "%PREFIX%\etc\conda\env_vars.d" mkdir "%PREFIX%\etc\conda\env_vars.d"
+echo {"MCSTAS": "%PREFIX:\=/%/share/mcstas/resources"}> "%PREFIX%\etc\conda\env_vars.d\%PKG_NAME%.json"
+if errorlevel 1 exit 1

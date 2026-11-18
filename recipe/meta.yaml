@@ -12,7 +12,7 @@ source:
     folder: src
 
 build:
-  number: 1
+  number: 2
 
 outputs:
 
@@ -100,7 +100,7 @@ outputs:
         # for visualisation of test output
         - jinja2
         # McStasscript and jupyter support
-        - mcstasscript >=0.0.89
+        - mcstasscript >=0.0.94
         - jupytext
         - jupyterlab
         - m2-which  # [win]
